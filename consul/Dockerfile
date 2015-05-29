@@ -19,7 +19,7 @@ RUN apk --update add \
                 /etc/nginx/sites-enabled
 
 COPY supervisord-nginx-consul.ini /etc/supervisor.d/supervisord-nginx-consul.ini
-
+COPY supervisord.conf /etc/supervisord.conf
 COPY nginx.conf /etc/nginx/nginx.conf
 
 VOLUME /var/www
