@@ -1,5 +1,5 @@
 ---
 - hosts: all
   tasks:
-      - name: Create /tmp/nginx/client-body
-        command: mkdir -p /tmp/nginx/client-body
+      - name: Create nginx directories
+        command: mkdir -p /tmp/nginx/client-body /etc/nginx/sites-enabled
