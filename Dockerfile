@@ -1,4 +1,4 @@
-FROM alpine:3.1
+FROM alpine:3.2
 
 MAINTAINER vSense <docker@vsense.fr>
 
@@ -6,13 +6,12 @@ RUN adduser -D -u 5001 -s /sbin/nologin -h /var/www nginx
 
 RUN apk add --update \
     nginx \
-    && rm -rf /var/cache/apk/* \
     && mkdir -p /tmp/nginx/client-body \
-                /etc/nginx/sites-enabled
+                /etc/nginx/sites-enabled \
+    && chown -R nginx:nginx /var/lib/nginx \
+    && rm -rf /var/cache/apk/*
 
 COPY nginx.conf /etc/nginx/nginx.conf
-
-VOLUME /var/www
 
 EXPOSE 80 443
 

@@ -1,4 +1,4 @@
-FROM alpine:3.1
+FROM alpine:3.2
 
 MAINTAINER vSense <docker@vsense.fr>
 
@@ -8,7 +8,6 @@ RUN apk add --update \
     nginx \
     php-fpm \
     supervisor \
-    && rm -rf /var/cache/apk/* \
     && mkdir -p /tmp/nginx/client-body \
                 /etc/nginx/sites-enabled \
     && sed -i \
@@ -20,13 +19,13 @@ RUN apk add --update \
     /etc/php/php-fpm.conf \
     && sed -i \
     -e '/open_basedir =/s/^/\;/' \
-    /etc/php/php.ini
+    /etc/php/php.ini \
+    && chown -R nginx:nginx /var/lib/nginx \
+    && rm -rf /var/cache/apk/*
 
 COPY supervisord-php-fpm.ini /etc/supervisor.d/supervisord-php-fpm.ini
 
 COPY nginx.conf /etc/nginx/nginx.conf
-
-VOLUME /var/www
 
 EXPOSE 80 443
 
