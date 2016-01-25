@@ -1,5 +1,0 @@
----
-- hosts: all
-  tasks:
-      - name: Create nginx directories
-        command: mkdir -p /tmp/nginx/client-body /etc/nginx/sites-enabled
