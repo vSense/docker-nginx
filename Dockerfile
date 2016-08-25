@@ -1,4 +1,4 @@
-FROM vsense/baseimage:alpine
+FROM vsense/baseimage:alpine-armhf
 
 MAINTAINER vSense <docker@vsense.fr>
 
