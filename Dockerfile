@@ -24,7 +24,7 @@ RUN apk add --update \
     && chown -R nginx:nginx /var/lib/nginx \
     && rm -rf /var/cache/apk/*
 
-COPY supervisord-php7-fpm.ini /etc/supervisor.d/supervisord-php7-fpm.ini
+COPY supervisord-php7.ini /etc/supervisor.d/supervisord-php7.ini
 
 COPY nginx.conf /etc/nginx/nginx.conf
 
