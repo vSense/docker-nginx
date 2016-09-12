@@ -6,8 +6,8 @@ RUN adduser -D -u 5001 -s /sbin/nologin -h /var/www nginx
 
 RUN apk add --update \
     nginx \
-    php7-fpm@edge \
-    php7-common@edge \
+    php7-fpm@community \
+    php7-common@community \
     supervisor \
     && mkdir -p /tmp/nginx/client-body \
                 /etc/nginx/sites-enabled \
