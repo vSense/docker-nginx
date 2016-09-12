@@ -4,8 +4,6 @@ Nginx is a free, open-source, high-performance HTTP server and reverse proxy, as
 
 [More info](http://nginx.org/en/)
 
-![Nginx](https://raw.githubusercontent.com/vSense/docker-nginx/master/logo.png)
-
 # How to choose a tag
 
 The following images are based on Alpine current version.
